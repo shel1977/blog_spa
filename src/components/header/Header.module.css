@@ -1,0 +1,8 @@
+
+
+.color {
+    background-color: cornflowerblue;
+}
+header {
+    grid-area: header;
+}

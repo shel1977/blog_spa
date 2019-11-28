@@ -1,0 +1,22 @@
+.menuStyle {
+    background-color: black;
+    text-align: center;
+
+}
+
+.menuStyle a{
+    margin: 12px 12px;
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 12.5px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+
+}
+
+a.active {
+    border-bottom: antiquewhite 1px solid;
+}
+nav {
+    grid-area: nav;
+}

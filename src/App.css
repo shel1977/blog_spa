@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+/*simple reset*/
+html, body {
+    height: 100%;
+}
+
+div#root{
+    height: 100%;
+}
+.body {
+    margin: 0px auto;
+    padding: 0 10px;
+    min-height: 100%;
+    display: grid;
+    grid-template-areas:    "header header"
+                            "nav nav"
+                            "article navbar"
+                            "footer footer";
+    grid-template-rows: 50px 40px 1fr 50px;
+    grid-template-columns: 5fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    background-color: blueviolet;
+    /*width: 1200px;*/
+
+}
+
+.appContent {
+    grid-area: article;
+}
+
+.navBar {
+    grid-area: navbar;
+}

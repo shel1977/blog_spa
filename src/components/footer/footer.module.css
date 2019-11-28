@@ -1,0 +1,8 @@
+.footerStyle {
+    background-color: blue;
+}
+
+footer {
+    grid-area: footer;
+    bottom: 0;
+}

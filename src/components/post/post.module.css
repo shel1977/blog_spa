@@ -1,0 +1,20 @@
+.postStyle {
+    background-color: antiquewhite;
+    border: black 1px solid;
+    padding: 20px;
+}
+
+.postImage img{
+width: 200px;
+}
+
+.postHeader {
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+.textPost {
+    font-size: 12px;
+    color: black;
+    font-weight: 300;
+}
