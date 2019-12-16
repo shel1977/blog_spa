@@ -1,0 +1,15 @@
+.userphoto_small_case {
+    width: 150px;
+    height: 150px;
+}
+.selectedPage {
+    font-weight: 600;
+    color: red;
+}
+
+.pagesNumList {
+    width: 100%;
+}
+.pagesNumList span {
+    margin: 5px;
+}

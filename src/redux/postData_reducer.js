@@ -4,36 +4,83 @@ const UPDATE_POST_HEAD = 'UPDATE_POST_HEAD';
 const UPDATE_POST_TEXT = 'UPDATE_POST_TEXT';
 const ADD_POST = 'ADD_POST';
 
+let initialstate = {
+        postData:  [
+            {
+                id: 1,
+                postImage: 'http://ppplaw.ru/wp-content/uploads/2019/10/deti-odni.jpg',
+                postHeader: 'Название пооста1',
+                postText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab atque blanditiis consectetur consequatur'
+            },
+            {
+                id: 2,
+                postImage: 'http://ppplaw.ru/wp-content/uploads/2019/10/deti-odni.jpg',
+                postHeader: 'Название пооста2',
+                postText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab atque blanditiis consectetur consequatur'
+            },
+            {
+                id: 3,
+                postImage: 'http://ppplaw.ru/wp-content/uploads/2019/10/deti-odni.jpg',
+                postHeader: 'Название пооста3',
+                postText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab atque blanditiis consectetur consequatur'
+            },
+            {
+                id: 4,
+                postImage: 'http://ppplaw.ru/wp-content/uploads/2019/10/deti-odni.jpg',
+                postHeader: 'Название пооста4',
+                postText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab atque blanditiis consectetur consequatur'
+            }
+        ],
+        newImgText: 'put href image',
+        newHeadText: 'put text',
+        newPostText: 'put text',
+}
 
-export const postDataReducer = (state, action) => {
+
+const postDataReducer = (state = initialstate, action) => {
+
     switch (action.type) {
-        case  ADD_POST:
-          let newPost = {
-            id: 5,
-            postImage: state.newImgText,
-            postHeader: state.newHeadText,
-            postText: state.newPostText
+
+        case  ADD_POST: {
+            let newPost = {
+                id: 5,
+                postImage: state.newImgText,
+                postHeader: state.newHeadText,
+                postText: state.newPostText
             };
-            state.postData.push(newPost);
-            state.newImgText = '';
-            state.newHeadText = '';
-            state.newPostText = '';
-            return state;
-        case UPDATE_POST_IMG:
-            state.newImgText = action.newIText;
-            return state;
-        case UPDATE_POST_HEAD:
-            state.newHeadText = action.newHText;
-            return state;
-        case UPDATE_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state,
+                postData: [...state.postData, newPost],
+                newImgText: '',
+                newHeadText: '',
+                newPostText: ''
+            };
+
+        }
+        case UPDATE_POST_IMG: {
+            return {
+                ...state,
+                newImgText: action.newIText};
+        }
+        case UPDATE_POST_HEAD: {
+            return {
+                ...state,
+                newHeadText: action.newHText
+            };
+        }
+        case UPDATE_POST_TEXT: {
+            return {
+                ...state,
+                newPostText: action.newText
+            };
+
+        }
             default:
                 return state;}
 
 
     };
-export const AddPostActionCreator = () => ({type : ADD_POST})
+export const AddPostActionCreator = () => ({type : ADD_POST});
 
 export const updatePostImageActionCreator = (imageLink) =>
     ({type: UPDATE_POST_IMG, newIText: imageLink});
@@ -44,3 +91,5 @@ export const updatePostHeadActionCreator = (textHead) => {
 export const updatePostTextActionCreator = (textPostText) => {
     return {type: UPDATE_POST_TEXT, newText: textPostText}
 };
+
+export default postDataReducer;

@@ -1,46 +1,46 @@
 import React from 'react';
 import stl from './Blogs.module.css';
 import Post from '../post/Post.jsx';
-import {AddPostActionCreator, updatePostImageActionCreator,
-        updatePostHeadActionCreator, updatePostTextActionCreator} from "../../redux/postData_reducer";
+
 
 const Blogs = (props) => {
-    let postElements = props.postPage.postData.map ( p => <Post postImage={p.postImage}
+
+    let postElements = props.postData.map ( p => <Post postImage={p.postImage}
                                                        postHeader={p.postHeader}
-                                                       postText={p.postText}/>);
+                                                       postText={p.postText}
+                                                       key={p.id} id={p.id} />);
 
     let addImgElement = React.createRef();
     let addHeadElement = React.createRef();
     let addTextElement = React.createRef();
 
     let addPost = () => {
-        props.dispatch(AddPostActionCreator());
+        props.addPost();
     };
 
     let onPostChangeImg = () => {
         let newImgText = addImgElement.current.value;
-        let action = updatePostImageActionCreator (newImgText);
-        props.dispatch(action);   // update textarea online on BLL
+        props.updatePostImage(newImgText);   // update textarea online on BLL
     };
 
     let onPostChangeHead = () => {
         let newHeadText = addHeadElement.current.value;
-        let action = updatePostHeadActionCreator(newHeadText);
-        props.dispatch(action);
+        // let action = updatePostHeadActionCreator(newHeadText);
+        props.updatePostHead(newHeadText);
     };
     let onPostChangeText = () => {
         let textPostText = addTextElement.current.value;
-        let action = updatePostTextActionCreator(textPostText);
-        props.dispatch(action);
+        // let action = updatePostTextActionCreator(textPostText);
+        props.updatePostText(textPostText);
     };
 
     return (
         <div className={stl.blogStyle}>
             {postElements}
             <div>
-                <div><textarea onChange={onPostChangeImg} ref={addImgElement} value={props.postPage.newImgText}/></div>
-                <div><textarea onChange={onPostChangeHead} ref={addHeadElement} value={props.postPage.newHeadText}/></div>
-                <div><textarea onChange={onPostChangeText} ref={addTextElement} value={props.postPage.newPostText} /></div>
+                <div><textarea onChange={onPostChangeImg} ref={addImgElement} value={props.newImgText}/></div>
+                <div><textarea onChange={onPostChangeHead} ref={addHeadElement} value={props.newHeadText}/></div>
+                <div><textarea onChange={onPostChangeText} ref={addTextElement} value={props.newPostText} /></div>
                 <div><button onClick={addPost}>add Post</button></div>
             </div>
         </div>
