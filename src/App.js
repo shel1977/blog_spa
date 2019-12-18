@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer';
 import {Route} from "react-router-dom";
 import BlogsContainer from "./components/blogs/BlogsContainer";
 import CasesContainer from "./components/cases/CasesContainer";
+import ProfilePageContainer from './components/profilePage/profilePageContainer';
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path='/homepage' render={ () => <HomePage/>}/>
                     <Route  path='/blog' render={ () => <BlogsContainer />}/>
                     <Route  path='/cases' render={ () => <CasesContainer />}/>
+                    <Route  path='/profile/:userId?' render={ () => <ProfilePageContainer />}/>
                 </div>
             </article>
             <Footer/>

@@ -2,11 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {
     follow,
-    setUsers,
-    unfollow,
-    setCurrentPage,
-    setTotalUserCount,
-    toggleIsFetching
+        setUsers,
+        unfollow,
+        setCurrentPage,
+        setTotalUserCount,
+        toggleIsFetching
 } from "../../redux/Cases_reduser";
 import * as axios from "axios/index";
 import Cases from "./Cases.js";
@@ -59,31 +59,7 @@ let mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
     }
-}
-
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId))
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId))
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         },
-//         setTotalUserCount: (totalCount) => {
-//             dispatch(setTotalUserCountAC(totalCount))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//
-//     }
-// }
+};
 
 export default connect(mapStateToProps, {
     follow,

@@ -80,16 +80,13 @@ const postDataReducer = (state = initialstate, action) => {
 
 
     };
-export const AddPostActionCreator = () => ({type : ADD_POST});
+export const addPost = (newPost) => ({type : ADD_POST, newPost});
 
-export const updatePostImageActionCreator = (imageLink) =>
+export const updatePostImage = (imageLink) =>
     ({type: UPDATE_POST_IMG, newIText: imageLink});
 
-export const updatePostHeadActionCreator = (textHead) => {
-    return {type: UPDATE_POST_HEAD, newHText: textHead}
-};
-export const updatePostTextActionCreator = (textPostText) => {
-    return {type: UPDATE_POST_TEXT, newText: textPostText}
-};
+export const updatePostHead = (textHead) => ({type: UPDATE_POST_HEAD, newHText: textHead});
+
+export const updatePostText = (textPostText) => ({type: UPDATE_POST_TEXT, newText: textPostText});
 
 export default postDataReducer;

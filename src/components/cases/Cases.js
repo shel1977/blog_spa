@@ -1,6 +1,7 @@
 import React from 'react';
 import stl from './cases.module.css';
 import userPhoto from '../../assets/img/user_noPhoto.png'
+import {NavLink} from "react-router-dom";
 
 
 let Cases = (props) => {
@@ -26,7 +27,10 @@ let Cases = (props) => {
                 props.users.map(u => <div key={u.id}>
     <span>
         <div>
+            <NavLink to={'/profile/' + u.id}>
             <img src={u.photos.small != null ? u.photos.small : userPhoto} className={stl.userphoto_small_case}/>
+            </NavLink>
+
         </div>
         <div>
             {u.followed ? <button onClick={() => {

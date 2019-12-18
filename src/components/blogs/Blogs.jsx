@@ -20,17 +20,15 @@ const Blogs = (props) => {
 
     let onPostChangeImg = () => {
         let newImgText = addImgElement.current.value;
-        props.updatePostImage(newImgText);   // update textarea online on BLL
+        props.updatePostImage(newImgText);
     };
 
     let onPostChangeHead = () => {
         let newHeadText = addHeadElement.current.value;
-        // let action = updatePostHeadActionCreator(newHeadText);
         props.updatePostHead(newHeadText);
     };
     let onPostChangeText = () => {
         let textPostText = addTextElement.current.value;
-        // let action = updatePostTextActionCreator(textPostText);
         props.updatePostText(textPostText);
     };
 

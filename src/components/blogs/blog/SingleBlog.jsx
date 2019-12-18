@@ -5,12 +5,6 @@ import stl from './SingleBlog.module.css';
 const SingleBlog = (props) => {
 
 
-
- /*   let singleBlog = props.postData
-         .map(postData => <singleBlog id={postData.id} postImage={postData.postImage} postHeader={postData.postHeader}
-                                postText={postData.postText}/>
-         );*/
-
     return (
 
        <div className={stl.singleBlogStyle}>

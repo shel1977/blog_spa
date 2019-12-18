@@ -9,7 +9,7 @@ const Menu = () => {
             <NavLink to='/blog' activeClassName={stl.active}>блог</NavLink>
             <NavLink to='/cases' activeClassName={stl.active}>кейсы</NavLink>
             <NavLink to='/contacts' activeClassName={stl.active}>контакты</NavLink>
-
+            <NavLink to='/profile' activeClassName={stl.active}>профиль</NavLink>
         </nav>
     );
 };
