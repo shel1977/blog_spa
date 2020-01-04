@@ -5,7 +5,6 @@ import Preloader from "../common/preloader/preloader.jsx";
 
 const ProfilePage = (props) => {
     if (!props.profile) {
-        debugger;
         return <Preloader />
     }
     return (<div>

@@ -9,12 +9,13 @@ import {Route} from "react-router-dom";
 import BlogsContainer from "./components/blogs/BlogsContainer";
 import CasesContainer from "./components/cases/CasesContainer";
 import ProfilePageContainer from './components/profilePage/profilePageContainer';
+import HeaderContainer from "./components/header/HeaderContainer";
 
 const App = () => {
 
     return (
         <div className='body'>
-            <Header/>
+            <HeaderContainer/>
             <Menu/>
             <div className='navBar'>
                 <NavBar/>

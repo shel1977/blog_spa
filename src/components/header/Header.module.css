@@ -6,3 +6,8 @@
 header {
     grid-area: header;
 }
+
+.loginBlock {
+
+    float: right;
+}
